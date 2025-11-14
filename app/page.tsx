@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import ScrollAnimation from '../components/ScrollAnimation'
-import TiltCard from '../components/TiltCard'
 
 const image = {
   url: 'https://res.cloudinary.com/deveb1jqw/image/upload/v1732900314/Melic/Melic_music_discovery_app_1_ks1lxr.png',
@@ -115,8 +114,8 @@ export default function MelicMusicApp() {
       <section className="py-16 relative z-10">
         <div className="max-w-6xl mx-auto px-6">
           <ScrollAnimation delay={0.1}>
-            <TiltCard className="mb-12">
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-br from-zinc-900 to-zinc-800 p-4">
+            <div className="mb-12 group">
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-br from-zinc-900 to-zinc-800 p-4 transition-all duration-300 hover:border-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/10">
                 <Image
                   src={image.url}
                   alt={image.alt}
@@ -126,7 +125,7 @@ export default function MelicMusicApp() {
                   unoptimized
                 />
               </div>
-            </TiltCard>
+            </div>
           </ScrollAnimation>
         </div>
       </section>
